@@ -13,9 +13,9 @@ interface SearchProps {
 async function getSearchProducts(query: string): Promise<Product[]> {
   const response = await api(`/products/search?q=${query}`, {
     cache: 'no-store',
-    next: {
-      revalidate: 60 * 60, // 1 hour
-    },
+    // next: {
+    //   revalidate: 60 * 60, // 1 hour
+    // },
   })
   const products = await response.json()
 
